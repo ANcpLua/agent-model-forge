@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Make scripts executable
+        run: find . -name '*.sh' -type f -exec chmod +x {} +
+
+      - name: Sync generated outputs
+        run: ./scripts/sync-all.sh
+
+      - name: Lint repo markers
+        run: ./scripts/lint-all.sh
+
+      - name: Validate local subtrees
+        run: ./scripts/validate-all.sh
+
+      - name: Smoke checks
+        run: ./scripts/run-smoke-all.sh

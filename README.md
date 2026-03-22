@@ -45,7 +45,8 @@ The goal is not to pretend all runtimes are the same. The goal is to preserve eq
 ## Quick start
 
 ```bash
-cd /Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge
+git clone https://github.com/ANcpLua/agent-model-forge.git
+cd agent-model-forge
 ./scripts/lint-all.sh
 ./scripts/validate-all.sh
 ./scripts/sync-all.sh
@@ -53,8 +54,8 @@ cd /Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge
 
 ## Key references
 
-- [repo-equivalents.md](/Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge/reference-matrix/repo-equivalents.md)
-- [feature-parity.md](/Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge/reference-matrix/feature-parity.md)
-- [claude-forge/README.md](/Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge/claude-forge/README.md)
-- [codex-forge/README.md](/Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge/codex-forge/README.md)
-- [unified-forge/README.md](/Users/ancplua/RiderProjects/12-factor-agents/agent-model-forge/unified-forge/README.md)
+- [repo-equivalents.md](reference-matrix/repo-equivalents.md)
+- [feature-parity.md](reference-matrix/feature-parity.md)
+- [claude-forge/README.md](claude-forge/README.md)
+- [codex-forge/README.md](codex-forge/README.md)
+- [unified-forge/README.md](unified-forge/README.md)
