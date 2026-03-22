@@ -1,0 +1,5 @@
+{
+  "event": "session.start",
+  "intent": "load local rules and highlight workspace-specific constraints",
+  "action": "read CLAUDE.md and list active rule files"
+}

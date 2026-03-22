@@ -1,0 +1,27 @@
+catalog_version: 2
+manifest_path: unified-forge/core/catalog/manifest.json
+summary:
+  agents: 10
+  skills: 14
+  rules: 4
+  workflows: 4
+  hooks: 2
+shared_assets:
+  - id: shared.delivery.map
+    kind: workflow
+  - id: shared.risk.review
+    kind: skill
+  - id: shared.incident.brief
+    kind: skill
+  - id: shared.parity.audit
+    kind: skill
+  - id: shared.skill.factory
+    kind: skill
+  - id: shared.execution.brief
+    kind: skill
+  - id: shared.interaction.direction
+    kind: skill
+  - id: shared.rule.sync
+    kind: skill
+  - id: shared.mcp.audit
+    kind: skill

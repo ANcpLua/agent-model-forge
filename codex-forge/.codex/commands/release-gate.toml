@@ -1,0 +1,3 @@
+title = "release-gate"
+when = "before output on large merges"
+output = "risk summary, confidence note, validation note"

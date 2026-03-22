@@ -1,0 +1,5 @@
+{
+  "event": "before.output",
+  "intent": "block unsupported broad claims",
+  "action": "require a validation note or an uncertainty note for large changes"
+}

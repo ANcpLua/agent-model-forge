@@ -1,0 +1,4 @@
+# Declare Non Comparable
+
+- Mark non-comparable features explicitly.
+- Do not force GUI operations into model-core equivalence.

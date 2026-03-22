@@ -1,0 +1,7 @@
+agent_contract:
+  must_define:
+    - name
+    - role
+    - authority_boundary
+    - failure_mode
+    - evidence_standard

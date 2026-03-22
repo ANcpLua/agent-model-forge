@@ -1,0 +1,7 @@
+skill_contract:
+  must_define:
+    - purpose
+    - inputs
+    - outputs
+    - stop_conditions
+    - quality_gate

@@ -1,0 +1,5 @@
+{
+  "event": "before_task",
+  "intent": "select the correct agent and note rule file",
+  "action": "read .codex/config.toml and .codex/rules/runtime.rules"
+}

@@ -1,0 +1,3 @@
+runtime: codex
+preferred_agent: pathfinder
+review_agent: skeptic

@@ -1,0 +1,3 @@
+title = "source-merge-matrix"
+intent = "when combining ideas from multiple repositories or frameworks"
+required_output = "source repo, retained capability, local equivalent, status"

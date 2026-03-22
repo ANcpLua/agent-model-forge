@@ -1,0 +1,3 @@
+title = "task-breakdown"
+intent = "turn a broad request into a bounded execution map"
+required_output = "current state, target state, delta, risk"

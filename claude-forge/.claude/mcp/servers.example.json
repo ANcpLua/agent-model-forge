@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "local-observer": {
+      "command": "node",
+      "args": ["./tools/local-observer.js"],
+      "type": "stdio"
+    }
+  }
+}

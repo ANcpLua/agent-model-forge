@@ -1,0 +1,9 @@
+{
+  "servers": [
+    {
+      "name": "local-index",
+      "command": "node",
+      "args": ["./tools/local-index.js"]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+title = "quality-wall"
+intent = "before large output or release notes"
+required_output = "defects, missing validation, documentation drift"

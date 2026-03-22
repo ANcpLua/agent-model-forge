@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: session-distiller
+review_agent: contract-keeper
+tier: curated

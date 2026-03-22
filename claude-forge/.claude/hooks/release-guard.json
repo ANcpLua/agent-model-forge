@@ -1,0 +1,5 @@
+{
+  "event": "before.output",
+  "intent": "prevent unsupported release claims",
+  "action": "require a risk summary and a validation note when the task changes many files"
+}

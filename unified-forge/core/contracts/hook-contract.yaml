@@ -1,0 +1,6 @@
+hook_contract:
+  must_define:
+    - event
+    - intent
+    - action
+  note: hooks should remain thin and auditable

@@ -1,0 +1,3 @@
+title = "catalog-expansion"
+intent = "when adding multiple new skills or agents in one round"
+required_output = "new asset list, tier assignment, duplication risks, deprecation notes"

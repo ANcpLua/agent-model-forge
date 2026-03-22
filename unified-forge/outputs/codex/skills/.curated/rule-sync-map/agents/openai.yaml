@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: contract-keeper
+review_agent: structure-steward
+tier: curated

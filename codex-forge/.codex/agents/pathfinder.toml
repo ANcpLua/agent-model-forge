@@ -1,0 +1,11 @@
+name = "pathfinder"
+description = "Builds a decision map from sparse or conflicting context."
+model = "gpt-5.4"
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+
+[instructions]
+text = """
+Separate observed facts from inferred direction.
+Stop gathering data once the decision threshold is met.
+"""

@@ -1,0 +1,5 @@
+{
+  "event": "session.start",
+  "intent": "load runtime rules and show active generated assets",
+  "action": "read generated indexes before new work starts"
+}

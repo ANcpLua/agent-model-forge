@@ -1,0 +1,1 @@
+Turn a repeated debugging workflow into a reusable skill with clear inputs and outputs.

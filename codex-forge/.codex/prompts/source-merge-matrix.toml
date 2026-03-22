@@ -1,0 +1,3 @@
+title = "source-merge-matrix"
+intent = "map upstream capabilities into retained, partial, or excluded local equivalents"
+required_output = "source capability, local equivalent, status, reason"

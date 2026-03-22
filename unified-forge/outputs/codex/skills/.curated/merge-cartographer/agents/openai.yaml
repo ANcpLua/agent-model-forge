@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: boundary-mapper
+review_agent: risk-lens
+tier: curated

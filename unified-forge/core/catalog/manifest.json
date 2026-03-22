@@ -1,0 +1,660 @@
+{
+  "catalogVersion": 2,
+  "agents": [
+    {
+      "id": "boundary-mapper",
+      "title": "Boundary Mapper",
+      "purpose": "Maps ownership lines, change surfaces, and hidden coupling before edits.",
+      "responsibilities": [
+        "define current state",
+        "name the target state",
+        "identify the true delta"
+      ],
+      "failureMode": "keeps exploring after the boundary is already clear",
+      "evidenceStandard": "must separate observed boundaries from guessed ones",
+      "codexModel": "gpt-5.3-codex-spark",
+      "reasoning": "medium",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "patch-smith",
+      "title": "Patch Smith",
+      "purpose": "Executes the smallest implementation that closes the requested gap.",
+      "responsibilities": [
+        "reduce change surface",
+        "implement directly",
+        "avoid speculative abstraction"
+      ],
+      "failureMode": "introduces framework before proving need",
+      "evidenceStandard": "must justify why the patch is sufficient",
+      "codexModel": "gpt-5.3-codex-spark",
+      "reasoning": "medium",
+      "sandbox": "workspace-write"
+    },
+    {
+      "id": "risk-lens",
+      "title": "Risk Lens",
+      "purpose": "Reviews regressions, edge cases, and unsupported claims.",
+      "responsibilities": [
+        "identify concrete failure paths",
+        "challenge missing validation",
+        "separate high risk from low signal"
+      ],
+      "failureMode": "complains without a mechanism",
+      "evidenceStandard": "every finding needs a failure path",
+      "codexModel": "gpt-5.4",
+      "reasoning": "high",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "contract-keeper",
+      "title": "Contract Keeper",
+      "purpose": "Checks whether artifacts satisfy their declared output shape and lifecycle contract.",
+      "responsibilities": [
+        "enforce schema promises",
+        "catch drift between docs and outputs",
+        "flag underspecified interfaces"
+      ],
+      "failureMode": "treats style drift like a contract bug",
+      "evidenceStandard": "must cite the broken contract field",
+      "codexModel": "gpt-5.4",
+      "reasoning": "medium",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "ops-observer",
+      "title": "Ops Observer",
+      "purpose": "Turns usage, session, and cost signals into operational guidance.",
+      "responsibilities": [
+        "spot repetitive spend",
+        "summarize workflow drag",
+        "recommend lower-friction patterns"
+      ],
+      "failureMode": "reports metrics without a decision",
+      "evidenceStandard": "must connect signal to an action",
+      "codexModel": "gpt-5.3-codex-spark",
+      "reasoning": "medium",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "catalog-curator",
+      "title": "Catalog Curator",
+      "purpose": "Maintains skill and agent inventories without losing ownership, tiering, or deprecation history.",
+      "responsibilities": [
+        "group assets by maturity",
+        "deprecate with replacements",
+        "keep names distinct and defensible"
+      ],
+      "failureMode": "adds duplicates instead of consolidating",
+      "evidenceStandard": "must explain why a new asset is not just a rename",
+      "codexModel": "gpt-5.4",
+      "reasoning": "medium",
+      "sandbox": "workspace-write"
+    },
+    {
+      "id": "session-distiller",
+      "title": "Session Distiller",
+      "purpose": "Converts one-off session knowledge into reusable rules, skills, or prompts.",
+      "responsibilities": [
+        "capture repeated work patterns",
+        "promote useful lessons",
+        "avoid dumping raw session logs into memory"
+      ],
+      "failureMode": "records trivia instead of durable knowledge",
+      "evidenceStandard": "must show the repeated pattern it is preserving",
+      "codexModel": "gpt-5.3-codex-spark",
+      "reasoning": "medium",
+      "sandbox": "workspace-write"
+    },
+    {
+      "id": "plan-critic",
+      "title": "Plan Critic",
+      "purpose": "Rejects vague, branchy, or file-unspecific plans before implementation starts.",
+      "responsibilities": [
+        "require exact changed files",
+        "remove speculative branches",
+        "force current and target state clarity"
+      ],
+      "failureMode": "treats every small task like architecture review",
+      "evidenceStandard": "must identify the missing concrete field in the plan",
+      "codexModel": "gpt-5.4",
+      "reasoning": "high",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "interaction-director",
+      "title": "Interaction Director",
+      "purpose": "Defines visual thesis, content structure, and interaction posture before frontend work.",
+      "responsibilities": [
+        "set visual thesis",
+        "set content plan",
+        "set interaction thesis"
+      ],
+      "failureMode": "produces generic style moodboards with no execution value",
+      "evidenceStandard": "must express concrete visual and interaction decisions",
+      "codexModel": "gpt-5.4",
+      "reasoning": "medium",
+      "sandbox": "read-only"
+    },
+    {
+      "id": "structure-steward",
+      "title": "Structure Steward",
+      "purpose": "Guards tree simplicity so new capabilities extend existing axes instead of inventing new roots.",
+      "responsibilities": [
+        "preserve root discipline",
+        "prevent duplicate transport layers",
+        "challenge unnecessary categories"
+      ],
+      "failureMode": "blocks justified structure changes on taste alone",
+      "evidenceStandard": "must explain why an existing axis is sufficient",
+      "codexModel": "gpt-5.4",
+      "reasoning": "medium",
+      "sandbox": "read-only"
+    }
+  ],
+  "skills": [
+    {
+      "id": "merge-cartographer",
+      "title": "Merge Cartographer",
+      "tier": "curated",
+      "purpose": "Map multiple upstream ideas into one local design without collapsing distinct responsibilities.",
+      "inputs": [
+        "source repositories",
+        "local design objective",
+        "non-comparable features"
+      ],
+      "outputs": [
+        "source buckets",
+        "local equivalents",
+        "gaps and exclusions",
+        "implementation order"
+      ],
+      "stopConditions": [
+        "all retained capabilities have a local home",
+        "all exclusions are explicit"
+      ],
+      "qualityGate": [
+        "never force false equivalence",
+        "name what is intentionally excluded"
+      ],
+      "preferredAgent": "boundary-mapper",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "rule-weaver",
+      "title": "Rule Weaver",
+      "tier": "system",
+      "purpose": "Compile operational guidance into runtime-specific rule carriers.",
+      "inputs": [
+        "policy source",
+        "target runtime",
+        "hard and soft constraints"
+      ],
+      "outputs": [
+        "runtime rule files",
+        "policy notes",
+        "conflict summary"
+      ],
+      "stopConditions": [
+        "all hard constraints are emitted",
+        "soft guidance stays separate from runtime config"
+      ],
+      "qualityGate": [
+        "do not bury policy inside plugin notes",
+        "keep rule text short and auditable"
+      ],
+      "preferredAgent": "contract-keeper",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "skill-factory",
+      "title": "Skill Factory",
+      "tier": "system",
+      "purpose": "Turn repeated behavior into reusable skills with explicit contracts.",
+      "inputs": [
+        "repeated workflow",
+        "expected deliverable",
+        "failure cases"
+      ],
+      "outputs": [
+        "purpose",
+        "inputs",
+        "outputs",
+        "stop conditions",
+        "quality gate"
+      ],
+      "stopConditions": [
+        "the skill has a named output shape"
+      ],
+      "qualityGate": [
+        "reject vague slogan skills",
+        "require explicit failure cases"
+      ],
+      "preferredAgent": "catalog-curator",
+      "reviewAgent": "contract-keeper"
+    },
+    {
+      "id": "telemetry-brief",
+      "title": "Telemetry Brief",
+      "tier": "system",
+      "purpose": "Summarize usage, cost, and friction signals into a short operating brief.",
+      "inputs": [
+        "usage source",
+        "cost signal",
+        "workflow pain points"
+      ],
+      "outputs": [
+        "observed drag",
+        "cost implication",
+        "recommended change"
+      ],
+      "stopConditions": [
+        "every metric is tied to a decision"
+      ],
+      "qualityGate": [
+        "do not report numbers without operational meaning"
+      ],
+      "preferredAgent": "ops-observer",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "parity-auditor",
+      "title": "Parity Auditor",
+      "tier": "curated",
+      "purpose": "Find capability gaps between Claude, Codex, and the unified source layer.",
+      "inputs": [
+        "runtime assets",
+        "canonical manifest",
+        "parity policy"
+      ],
+      "outputs": [
+        "missing equivalents",
+        "partial equivalents",
+        "non-comparable notes"
+      ],
+      "stopConditions": [
+        "all gaps are classified"
+      ],
+      "qualityGate": [
+        "separate partial from non-comparable",
+        "never mark parity as complete by omission"
+      ],
+      "preferredAgent": "boundary-mapper",
+      "reviewAgent": "contract-keeper"
+    },
+    {
+      "id": "manifest-gardener",
+      "title": "Manifest Gardener",
+      "tier": "experimental",
+      "purpose": "Maintain manifest integrity while growing the catalog aggressively.",
+      "inputs": [
+        "new assets",
+        "existing manifest",
+        "deprecation intent"
+      ],
+      "outputs": [
+        "updated manifest",
+        "deprecation notes",
+        "naming conflict summary"
+      ],
+      "stopConditions": [
+        "all new assets have owners and tiers"
+      ],
+      "qualityGate": [
+        "no duplicate intent under different names"
+      ],
+      "preferredAgent": "catalog-curator",
+      "reviewAgent": "contract-keeper"
+    },
+    {
+      "id": "session-distiller",
+      "title": "Session Distiller",
+      "tier": "curated",
+      "purpose": "Turn session learnings into durable assets instead of raw memory sprawl.",
+      "inputs": [
+        "session notes",
+        "repeated patterns",
+        "promotion threshold"
+      ],
+      "outputs": [
+        "candidate rule",
+        "candidate skill",
+        "candidate prompt"
+      ],
+      "stopConditions": [
+        "the learning is reusable by another session"
+      ],
+      "qualityGate": [
+        "do not preserve one-off trivia"
+      ],
+      "preferredAgent": "session-distiller",
+      "reviewAgent": "contract-keeper"
+    },
+    {
+      "id": "subagent-architect",
+      "title": "Subagent Architect",
+      "tier": "experimental",
+      "purpose": "Design agent role splits that reduce context waste and review ambiguity.",
+      "inputs": [
+        "task types",
+        "handoff boundaries",
+        "model budget"
+      ],
+      "outputs": [
+        "agent roster",
+        "routing hints",
+        "handoff rules"
+      ],
+      "stopConditions": [
+        "each agent has one clear reason to exist"
+      ],
+      "qualityGate": [
+        "reject overlapping agent roles"
+      ],
+      "preferredAgent": "boundary-mapper",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "execution-brief",
+      "title": "Execution Brief",
+      "tier": "system",
+      "purpose": "Force current state, target state, delta, and exact files before implementation.",
+      "inputs": [
+        "task request",
+        "current state",
+        "target state"
+      ],
+      "outputs": [
+        "current state",
+        "target state",
+        "delta",
+        "exact files"
+      ],
+      "stopConditions": [
+        "the changed file set is named"
+      ],
+      "qualityGate": [
+        "reject vague file scopes",
+        "reject branchy plans without a recommendation"
+      ],
+      "preferredAgent": "plan-critic",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "interaction-direction",
+      "title": "Interaction Direction",
+      "tier": "curated",
+      "purpose": "Set visual thesis, content plan, and interaction thesis before UI implementation.",
+      "inputs": [
+        "product surface",
+        "audience",
+        "visual goal"
+      ],
+      "outputs": [
+        "visual thesis",
+        "content plan",
+        "interaction thesis"
+      ],
+      "stopConditions": [
+        "UI direction is concrete enough to implement without guesswork"
+      ],
+      "qualityGate": [
+        "reject generic design language",
+        "avoid boilerplate UI patterns"
+      ],
+      "preferredAgent": "interaction-director",
+      "reviewAgent": "plan-critic"
+    },
+    {
+      "id": "plan-gate",
+      "title": "Plan Gate",
+      "tier": "curated",
+      "purpose": "Review a plan and reject it if it is vague, branchy, or structurally noisy.",
+      "inputs": [
+        "proposed plan",
+        "file scope",
+        "stop condition"
+      ],
+      "outputs": [
+        "rejection reasons",
+        "repair direction",
+        "approved minimal plan"
+      ],
+      "stopConditions": [
+        "the plan is either approved or concretely rejected"
+      ],
+      "qualityGate": [
+        "every criticism must be actionable"
+      ],
+      "preferredAgent": "plan-critic",
+      "reviewAgent": "risk-lens"
+    },
+    {
+      "id": "change-review-ledger",
+      "title": "Change Review Ledger",
+      "tier": "curated",
+      "purpose": "Review correctness, drift, and regression risk with a structured findings ledger.",
+      "inputs": [
+        "changed artifacts",
+        "intended behavior",
+        "known risks"
+      ],
+      "outputs": [
+        "findings",
+        "drift notes",
+        "validation gaps"
+      ],
+      "stopConditions": [
+        "all findings are tied to a mechanism or file"
+      ],
+      "qualityGate": [
+        "summary comes after findings"
+      ],
+      "preferredAgent": "risk-lens",
+      "reviewAgent": "contract-keeper"
+    },
+    {
+      "id": "rule-sync-map",
+      "title": "Rule Sync Map",
+      "tier": "curated",
+      "purpose": "Map one set of operating rules into multiple runtime carriers without changing intent.",
+      "inputs": [
+        "source rules",
+        "target runtimes",
+        "hard boundaries"
+      ],
+      "outputs": [
+        "carrier mapping",
+        "intent-preserving translations",
+        "conflict notes"
+      ],
+      "stopConditions": [
+        "all rules have an explicit carrier in each target runtime"
+      ],
+      "qualityGate": [
+        "intent must remain stable across carriers"
+      ],
+      "preferredAgent": "contract-keeper",
+      "reviewAgent": "structure-steward"
+    },
+    {
+      "id": "mcp-surface-audit",
+      "title": "MCP Surface Audit",
+      "tier": "experimental",
+      "purpose": "Audit how MCP and resource definitions touch model behavior without hiding policy inside connectors.",
+      "inputs": [
+        "mcp configuration",
+        "resource list",
+        "runtime policies"
+      ],
+      "outputs": [
+        "behavioral impact",
+        "connector-only concerns",
+        "policy leakage notes"
+      ],
+      "stopConditions": [
+        "connector behavior and policy behavior are separated"
+      ],
+      "qualityGate": [
+        "do not let integration details rewrite model policy"
+      ],
+      "preferredAgent": "ops-observer",
+      "reviewAgent": "structure-steward"
+    }
+  ],
+  "rules": [
+    {
+      "id": "map-before-change",
+      "title": "Map Before Change",
+      "lines": [
+        "Map current state and target state before editing.",
+        "Do not change multiple surfaces without naming the delta."
+      ]
+    },
+    {
+      "id": "evidence-over-assertion",
+      "title": "Evidence Over Assertion",
+      "lines": [
+        "Separate observed facts from inferred conclusions.",
+        "Do not claim confidence without a concrete basis."
+      ]
+    },
+    {
+      "id": "policy-not-plugin",
+      "title": "Policy Not Plugin",
+      "lines": [
+        "Keep behavioral policy in rules and contracts.",
+        "Do not hide important policy inside optional integration layers."
+      ]
+    },
+    {
+      "id": "declare-non-comparable",
+      "title": "Declare Non Comparable",
+      "lines": [
+        "Mark non-comparable features explicitly.",
+        "Do not force GUI operations into model-core equivalence."
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "scope-map",
+      "title": "Scope Map",
+      "when": "before touching more than one subsystem",
+      "requiredOutput": [
+        "current surfaces",
+        "target surfaces",
+        "delta",
+        "risk"
+      ]
+    },
+    {
+      "id": "quality-wall",
+      "title": "Quality Wall",
+      "when": "before large output or release notes",
+      "requiredOutput": [
+        "defects",
+        "missing validation",
+        "documentation drift"
+      ]
+    },
+    {
+      "id": "source-merge-matrix",
+      "title": "Source Merge Matrix",
+      "when": "when combining ideas from multiple repositories or frameworks",
+      "requiredOutput": [
+        "source repo",
+        "retained capability",
+        "local equivalent",
+        "status"
+      ]
+    },
+    {
+      "id": "catalog-expansion",
+      "title": "Catalog Expansion",
+      "when": "when adding multiple new skills or agents in one round",
+      "requiredOutput": [
+        "new asset list",
+        "tier assignment",
+        "duplication risks",
+        "deprecation notes"
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "id": "session-open",
+      "event": "session.start",
+      "intent": "load runtime rules and show active generated assets",
+      "action": "read generated indexes before new work starts"
+    },
+    {
+      "id": "evidence-gate",
+      "event": "before.output",
+      "intent": "block unsupported broad claims",
+      "action": "require a validation note or an uncertainty note for large changes"
+    }
+  ],
+  "sourceCoverage": [
+    {
+      "sourceRepo": "awesome-codex-subagents",
+      "capability": "Codex subagent specialization",
+      "mappedTo": "agents plus subagent-architect",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "skrills",
+      "capability": "cross-runtime registry and skill lifecycle",
+      "mappedTo": "manifest plus generator",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "ai-rules-sync",
+      "capability": "rule normalization across carriers",
+      "mappedTo": "rules plus workflows plus parity docs",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "cc-switch",
+      "capability": "provider switching and GUI sync",
+      "mappedTo": "parity exclusion only",
+      "status": "excluded"
+    },
+    {
+      "sourceRepo": "ccusage",
+      "capability": "usage and cost visibility",
+      "mappedTo": "telemetry-brief and observability notes",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "cockpit-tools",
+      "capability": "account dashboards and multi-instance management",
+      "mappedTo": "parity exclusion only",
+      "status": "excluded"
+    },
+    {
+      "sourceRepo": "antigravity-awesome-skills",
+      "capability": "broad installable skill catalog",
+      "mappedTo": "manual and generated skill packs",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "everything-claude-code",
+      "capability": "Claude harness rules, hooks, and session learning",
+      "mappedTo": "Claude tree plus session-distiller",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "openai/skills",
+      "capability": "Codex-oriented skill packaging",
+      "mappedTo": "tiered Codex skill outputs",
+      "status": "retained"
+    },
+    {
+      "sourceRepo": "ANcpLua/codex-repo-template",
+      "capability": "strict Codex control surfaces and tree discipline",
+      "mappedTo": "generated .agents/skills runtime plus structure-steward and execution-brief",
+      "status": "retained"
+    }
+  ]
+}

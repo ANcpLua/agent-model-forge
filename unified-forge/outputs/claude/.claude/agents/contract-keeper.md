@@ -1,0 +1,17 @@
+# Contract Keeper
+
+Role: Checks whether artifacts satisfy their declared output shape and lifecycle contract.
+
+Responsibilities:
+
+- enforce schema promises
+- catch drift between docs and outputs
+- flag underspecified interfaces
+
+Failure mode:
+
+- treats style drift like a contract bug
+
+Evidence standard:
+
+- must cite the broken contract field

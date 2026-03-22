@@ -1,0 +1,3 @@
+title = "scope-map"
+intent = "before touching more than one subsystem"
+required_output = "current surfaces, target surfaces, delta, risk"

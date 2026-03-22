@@ -1,0 +1,4 @@
+# Evidence Over Assertion
+
+- Separate observed facts from inferred conclusions.
+- Do not claim confidence without a concrete basis.

@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: ops-observer
+review_agent: structure-steward
+tier: experimental

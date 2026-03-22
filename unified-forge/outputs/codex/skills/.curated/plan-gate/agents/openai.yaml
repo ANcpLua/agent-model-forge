@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: plan-critic
+review_agent: risk-lens
+tier: curated

@@ -1,0 +1,3 @@
+title = "risk-ledger"
+intent = "list defects and unsupported assumptions before summary"
+required_output = "findings, evidence, unverified areas"

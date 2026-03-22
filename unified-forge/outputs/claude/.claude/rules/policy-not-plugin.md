@@ -1,0 +1,4 @@
+# Policy Not Plugin
+
+- Keep behavioral policy in rules and contracts.
+- Do not hide important policy inside optional integration layers.

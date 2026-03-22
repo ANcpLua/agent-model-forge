@@ -1,0 +1,9 @@
+id: sample.skill.local
+kind: skill
+intent: convert a repeated workflow into a reusable asset
+output_shape:
+  - purpose
+  - inputs
+  - outputs
+quality_gate:
+  - named output shape is required

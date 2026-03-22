@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: catalog-curator
+review_agent: contract-keeper
+tier: system

@@ -1,0 +1,3 @@
+title = "work-intake"
+when = "before implementation starts"
+output = "scope, constraints, default agent, validation note"

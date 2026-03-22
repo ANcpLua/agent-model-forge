@@ -1,0 +1,13 @@
+asset_contract:
+  required_fields:
+    - id
+    - kind
+    - intent
+    - output_shape
+    - quality_gate
+  valid_kinds:
+    - skill
+    - agent
+    - rule
+    - prompt
+    - hook

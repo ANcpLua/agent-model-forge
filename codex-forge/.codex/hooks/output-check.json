@@ -1,0 +1,5 @@
+{
+  "event": "before_output",
+  "intent": "prevent unsupported claims",
+  "action": "require a validation note when the task modifies multiple runtime files"
+}

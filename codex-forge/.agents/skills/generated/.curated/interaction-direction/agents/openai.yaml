@@ -1,0 +1,4 @@
+runtime: codex
+preferred_agent: interaction-director
+review_agent: plan-critic
+tier: curated
