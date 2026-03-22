@@ -19,3 +19,12 @@
 - Skills are tiered by trust and maturity.
 - Agents declare sandbox posture and review burden directly.
 - The active Codex runtime surface is generated into `.agents/skills/generated/` and `.codex/agents/generated/`.
+
+## Runtime path posture
+
+For split workspaces, prefer explicit repo-local environment variables over repo-root guessing.
+
+- normal setup: `AGENT_FORGE_PROXY_WORKDIR` and `AGENT_FORGE_SNAPSHOT_ROOT`
+- rare escape hatches: `AGENT_FORGE_PROXY_URL` and `AGENT_FORGE_CLI_PATH`
+
+See [runtime-path-overrides.md](runtime-path-overrides.md).

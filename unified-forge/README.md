@@ -17,3 +17,8 @@
 - `adapters/` for emitters
 - `outputs/` for generated runtime markers
 - `tests/` for equivalence and contract smoke checks
+
+## Shared docs
+
+- [model-first-design.md](docs/model-first-design.md)
+- [runtime-path-surface.md](docs/runtime-path-surface.md)

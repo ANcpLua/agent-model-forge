@@ -6,6 +6,7 @@
 | skill catalog | flat Claude skill folders | tiered skill packs under `.system`, `.curated`, `.experimental` | manifest `skills[]` plus runtime renderers | `antigravity-awesome-skills`, `openai/skills`, `skrills` | comparable |
 | skill lifecycle and curation | manual local authoring | tiered maturity and agent metadata | manifest ownership and tier fields | `skrills`, `openai/skills` | comparable |
 | codex official control surfaces | not primary | `AGENTS.md`, `.agents/skills/generated/`, `.codex/agents/generated/` | manifest-driven runtime projection | `ANcpLua/codex-repo-template`, `openai/skills` | codex-biased but comparable |
+| runtime path bootstrap | local defaults and directory adjacency | two-core-variable path overrides with separate escape hatches | documented runtime path contract | `ANcpLua/codex-repo-template`, `everything-claude-code` | codex-biased but comparable |
 | rules and memory | `.claude/rules/` and `CLAUDE.md` | `.codex/rules/` and runtime config | manifest `rules[]` | `ai-rules-sync`, `everything-claude-code` | comparable |
 | commands and prompts | Markdown command briefs | TOML prompt manifests | manifest `workflows[]` | `everything-claude-code`, `openai/skills` | comparable |
 | prompt-contract discipline | command briefs with explicit required output | generated prompt manifests and plan gating | workflow definitions plus `plan-critic` | `ANcpLua/codex-repo-template`, `everything-claude-code` | comparable |
