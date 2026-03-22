@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Model Forge Showcase Cover</title>
+  <desc id="desc">Cover image showing Claude Forge, Unified Forge, and Codex Forge connected through a manifest-driven generator.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe5" />
+      <stop offset="100%" stop-color="#d6e7f7" />
+    </linearGradient>
+    <linearGradient id="panelA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7d7a8" />
+      <stop offset="100%" stop-color="#f3b471" />
+    </linearGradient>
+    <linearGradient id="panelB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7d9" />
+      <stop offset="100%" stop-color="#f0df8d" />
+    </linearGradient>
+    <linearGradient id="panelC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cde6ff" />
+      <stop offset="100%" stop-color="#86b9f5" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#314560" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title { font: 700 64px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #132033; }
+      .subtitle { font: 400 28px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334964; }
+      .panelTitle { font: 700 32px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #15263d; }
+      .panelText { font: 500 21px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #243750; }
+      .small { font: 600 18px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #27405f; }
+      .mono { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #253b56; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <circle cx="1440" cy="130" r="170" fill="#ffffff" fill-opacity="0.4" />
+  <circle cx="180" cy="760" r="220" fill="#ffffff" fill-opacity="0.28" />
+
+  <text x="110" y="120" class="title">Agent Model Forge</text>
+  <text x="110" y="170" class="subtitle">One manifest. Three projections. Claude-first, Codex-first, and unified by design.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="250" rx="28" ry="28" width="380" height="420" fill="url(#panelA)" />
+    <rect x="610" y="210" rx="30" ry="30" width="380" height="500" fill="url(#panelB)" />
+    <rect x="1120" y="250" rx="28" ry="28" width="380" height="420" fill="url(#panelC)" />
+  </g>
+
+  <g>
+    <text x="140" y="315" class="panelTitle">Claude Forge</text>
+    <text x="140" y="360" class="panelText">.claude/agents</text>
+    <text x="140" y="395" class="panelText">.claude/skills</text>
+    <text x="140" y="430" class="panelText">.claude/rules</text>
+    <text x="140" y="465" class="panelText">commands + hooks</text>
+    <text x="140" y="525" class="small">Human-authored runtime + generated projection</text>
+    <text x="140" y="585" class="mono">boundary-mapper</text>
+    <text x="140" y="615" class="mono">parity-auditor</text>
+    <text x="140" y="645" class="mono">session-distiller</text>
+  </g>
+
+  <g>
+    <text x="650" y="275" class="panelTitle">Unified Forge</text>
+    <text x="650" y="320" class="panelText">core/catalog/manifest.json</text>
+    <text x="650" y="355" class="panelText">contracts + registry</text>
+    <text x="650" y="390" class="panelText">runtime generators</text>
+    <text x="650" y="425" class="panelText">source parity mapping</text>
+    <text x="650" y="485" class="small">Canonical source of truth</text>
+    <text x="650" y="545" class="mono">agents: 10</text>
+    <text x="650" y="575" class="mono">skills: 14</text>
+    <text x="650" y="605" class="mono">rules: 4</text>
+    <text x="650" y="635" class="mono">workflows: 4</text>
+    <text x="650" y="665" class="mono">hooks: 2</text>
+  </g>
+
+  <g>
+    <text x="1160" y="315" class="panelTitle">Codex Forge</text>
+    <text x="1160" y="360" class="panelText">.codex/agents</text>
+    <text x="1160" y="395" class="panelText">.agents/skills/generated</text>
+    <text x="1160" y="430" class="panelText">rules + prompts</text>
+    <text x="1160" y="465" class="panelText">tiered skill catalog</text>
+    <text x="1160" y="525" class="small">Strict runtime surfaces with generated outputs</text>
+    <text x="1160" y="585" class="mono">plan-critic</text>
+    <text x="1160" y="615" class="mono">structure-steward</text>
+    <text x="1160" y="645" class="mono">rule-sync-map</text>
+  </g>
+
+  <g stroke="#35557e" stroke-width="10" fill="none" stroke-linecap="round">
+    <path d="M 480 460 C 560 460, 560 460, 610 460" />
+    <path d="M 990 460 C 1060 460, 1070 460, 1120 460" />
+  </g>
+
+  <g fill="#35557e">
+    <polygon points="586,448 618,460 586,472" />
+    <polygon points="1092,448 1124,460 1092,472" />
+  </g>
+
+  <text x="100" y="800" class="subtitle">Original implementation inspired by public agent ecosystems, built as a unified showcase-ready workspace.</text>
+</svg>
